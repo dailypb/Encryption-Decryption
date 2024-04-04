@@ -1,17 +1,7 @@
 """ 
 
 Cryptography Application 
-Name: Marvellous Timilehin Ojo 
-Student ID: 22547636
-REFERENCES:
-15% From notes 
-40% https://cryptography.io/en/latest/
-10% https://pypi.org/project
-5%  https://www.geeksforgeeks.org/security-of-rsa/
-10% https://pycryptodome.readthes.io/
-5%  https://pillow.readthedocs.io/en/stable/reference/Image.html
-10%  https://nitratine.net/blog/post/asymmetric-encryption-and-decryption-in-python/#:~:text=Asymmetric%20encryption%20uses%20two%20keys,key%20can%20decrypt%20the%20message.
-5%  https://cryptography.io/en/latest/hazmat/primitives/asymmetric/rsa/#encryption
+Encrypt and decrypt different files types in secure manner
 
 """
 
