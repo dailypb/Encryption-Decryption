@@ -1,0 +1,381 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rideId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "driver",
+						"type": "address"
+					}
+				],
+				"name": "RideCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rideId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "driver",
+						"type": "address"
+					}
+				],
+				"name": "RideMatched",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rideId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					}
+				],
+				"name": "RideRequested",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_rideId",
+						"type": "uint256"
+					}
+				],
+				"name": "completeRide",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "driverRides",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_driver",
+						"type": "address"
+					}
+				],
+				"name": "getRidesForDriver",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "rider",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pickupLocation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dropOffLocation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum RideManager.RideStatus",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "address",
+								"name": "driver",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256[2]",
+								"name": "proof",
+								"type": "uint256[2]"
+							}
+						],
+						"internalType": "struct RideManager.Ride[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_rider",
+						"type": "address"
+					}
+				],
+				"name": "getRidesForRider",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "rider",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pickupLocation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dropOffLocation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum RideManager.RideStatus",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "address",
+								"name": "driver",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256[2]",
+								"name": "proof",
+								"type": "uint256[2]"
+							}
+						],
+						"internalType": "struct RideManager.Ride[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_rideId",
+						"type": "uint256"
+					}
+				],
+				"name": "matchRide",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pickupLocation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_dropOffLocation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "zkProof",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "requestRide",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "riderRides",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "rides",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pickupLocation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dropOffLocation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum RideManager.RideStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "address",
+						"name": "driver",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/RideManager.sol": "RideManager"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RideManager.sol": {
+			"keccak256": "0x92a38d442ac65a45602f7cb18c3454185b526da991ba023a1e60cf7a3c6f5f29",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a9afb81e9c98dd54017e525bf096da955f9ca8435e6e898ff7226f4d3b7541ee",
+				"dweb:/ipfs/QmU9SPY9RTEQsmY9zkRPjwSj9yspMpjzwGDBoPWyptP6Hb"
+			]
+		},
+		"contracts/UserManager.sol": {
+			"keccak256": "0xc0a1ea8b7f94164ea513589ad2b5bb6596f9d00fa43dc21d6aa76a4237b900de",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e2a5c77668e8800dbe51ae2b634eae26ec68a337a75b069c77fda360a781d56",
+				"dweb:/ipfs/QmY2QjTwSpxA9w1QLsHexrywes4HFnHeWsGeUiBjenLhqv"
+			]
+		}
+	},
+	"version": 1
+}
